@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="14" />
+	<service android:enabled="true" android:name="app1.droid.Servis" />
+	<application android:label="App1.Android" android:icon="@drawable/icon">
+    <!--<service android:enabled="true" android:name="app1.droid.Servis"/>-->
+		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCnmCsZVCAQ9Whj3oQc_QxYsb9NZNKU43I" />
+		<receiver android:name="app1.droid.BCR" android:enabled="true" android:exported="false">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+			</intent-filter>
+		</receiver>
+	</application>
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>
