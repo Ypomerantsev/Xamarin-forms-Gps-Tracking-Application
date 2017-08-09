@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Zemljevid"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Sensors.MapsPage"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="try2"/>
+    </ContentPage.Icon>
+
+    <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="0">
+        <Label x:Name="test"/>
+        <maps:Map 
+            x:Name="MyMap"
+            IsShowingUser="false"
+            MapType="Street"
+        />
+    </StackLayout>
+</ContentPage>

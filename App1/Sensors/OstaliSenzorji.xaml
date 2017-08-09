@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Ostali"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Sensors.OstaliSenzorji"
+             xmlns:i18n="clr-namespace:App1;assembly=App1"
+             xmlns:local="clr-namespace:App1;assembly=App1">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="try2"/>
+    </ContentPage.Icon>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Label Text="{i18n:Translate Posp}" Grid.Row="0" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="0" />
+        <Label Text="0" x:Name="acc"  Grid.Row="0" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="1" />
+        <Label Text="Orientacija:" Grid.Row="1" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="0" />
+        <Label Text="0" x:Name="orient"  Grid.Row="1" FontSize="Medium" VerticalTextAlignment="Center"  Grid.Column="1" />
+        <Label Text="Kompas:" Grid.Row="2" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="0" />
+        <Label Text="0" x:Name="compas"  Grid.Row="2" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="1" />
+        <Label Text="Hitrost:" Grid.Row="3" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="0" />
+        <Label Text="0" x:Name="speed"  Grid.Row="3" FontSize="Medium" VerticalTextAlignment="Center" Grid.Column="1" />
+        <Button Text="Sl" x:Name="slo" Clicked="slo_Clicked" Grid.Row="4" Grid.Column="0"/>
+        <Button Text="En" x:Name="en" Clicked="en_Clicked" Grid.Row="4" Grid.Column="1"/>
+        
+        <!--<ListView x:Name="lv" ItemsSource="{Binding collection}" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"/>-->
+        <!--<ListView x:Name="lv" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Label Text="test" FontAttributes="Bold" />
+                            <Label Grid.Column="1" Text="{Binding collection.Lattitude}" />
+                            <Label Grid.Column="2" Text="{Binding collection.Longtitude}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <ListView x:Name="lv" 
+	              ItemsSource="{Binding Kolekcija}"
+                  Grid.Row="5"
+                  Grid.Column="0"
+                  Grid.ColumnSpan="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Latitude}" Detail="{Binding Longitude}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+
+        <Switch Grid.Row="6" Grid.Column="0" Toggled="Switch_Toggled"   />
+        <Entry x:Name="inputTest" Grid.Row="6" Grid.Column="1" TextChanged="inputTest_TextChanged" />
+    </Grid>
+</ContentPage>

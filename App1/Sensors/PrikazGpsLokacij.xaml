@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Gps Lokacije"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Sensors.PrikazGpsLokacij"
+             xmlns:i18n="clr-namespace:App1;assembly=App1"
+             xmlns:local="clr-namespace:App1;assembly=App1">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="try2"/>
+    </ContentPage.Icon>
+    <!--<StackLayout Orientation="Vertical" >
+
+        <StackLayout Orientation="Horizontal" BackgroundColor="#42f4ee">
+            <Label Text="Miha"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" 
+                                       />
+            <Label Text="Miha"
+                                    TextColor="#f35e20" />
+            <Label Text="Miha"
+                                    TextColor="#f35e20" />
+            <Label Text="Miha"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" BackgroundColor="#42f4ee">
+            <Label Text="Miha"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" 
+                                       />
+            <Label Text="Miha"
+                                    TextColor="#f35e20" />
+            <Label Text="Miha"
+                                    TextColor="#f35e20" />
+            <Label Text="Miha"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Miha"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" 
+                                       />
+            <Label Text="Miha"
+                                    TextColor="#f35e20" />
+            <Label Text="Miha"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+        </StackLayout>
+    </StackLayout>-->
+    <ListView x:Name="lv" ItemsSource="{Binding Kolekcija}" RowHeight="60" >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <ViewCell>
+                    <StackLayout Orientation="Vertical" Spacing="0" >
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Timestamp, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" 
+                                       />
+                            <Label Text="{Binding Longitude, StringFormat='{0:N5}'}"
+                                    TextColor="#f35e20"
+                                   />
+                            <Label Text="{Binding Latitude, StringFormat='{0:N5}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding SwitchFlag, StringFormat='Flag:{0:d}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="#42f4ee">
+                            <Label Text="{Binding MaxAccX_TS, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" 
+                                       />
+                            <Label Text="{Binding MaxAccX_X, StringFormat='{0:N2}'}"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding MaxAccX_Y, StringFormat='{0:N2}'}"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding MaxAccX_Z, StringFormat='{0:N2}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="LemonChiffon">
+                            <Label Text="{Binding LinMaxAccX_TS, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#503026" 
+                                       />
+                            <Label Text="{Binding LinMaxAccX_X, StringFormat='{0:N2}'}"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding LinMaxAccX_Y, StringFormat='{0:N2}'}"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding LinMaxAccX_Z, StringFormat='{0:N2}'}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+                        </StackLayout>
+                        
+                    </StackLayout>
+                </ViewCell>
+                <!--<TextCell Text="{Binding Latitude}" Detail="{Binding Longitude}"></TextCell>-->
+               <!--<TextCell Text="{Binding CreationDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}" Detail=""></TextCell>-->
+                
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Title="Lokalne instance pospeskov"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.Sensors.PrikazPospeskov"
+             xmlns:i18n="clr-namespace:App1;assembly=App1"
+             xmlns:local="clr-namespace:App1;assembly=App1">
+    <ContentPage.Icon>
+        <OnPlatform x:TypeArguments="FileImageSource" iOS="try2"/>
+    </ContentPage.Icon>
+    <ListView x:Name="lv">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+
+                <ViewCell>
+                    <StackLayout Orientation="Vertical">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding ID}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#000000" 
+                                       />
+                            <Label Text="{Binding Vrsta, StringFormat='Tip = {0:d}'}"
+                                    TextColor="#503026" 
+                                       />
+                            <Label Text="{Binding Timestamp, StringFormat='{0:MMMM d, yyyy HH:mm}'}"
+                                    TextColor="#503026" 
+                                       />
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" BackgroundColor="#42f4ee">
+                            <Label Text="{Binding X}"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding Y}"
+                                    TextColor="#f35e20" />
+                            <Label Text="{Binding Z}"
+                                    HorizontalOptions="EndAndExpand"
+                                    TextColor="#f35e20" />
+                        </StackLayout>
+                    </StackLayout>
+                </ViewCell>
+                <!--<TextCell Text="{Binding Latitude}" Detail="{Binding Longitude}"></TextCell>-->
+               <!--<TextCell Text="{Binding CreationDate, StringFormat='{0:MMMM d, yyyy HH:mm}'}" Detail=""></TextCell>-->
+                
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
